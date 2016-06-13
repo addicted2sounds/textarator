@@ -27,12 +27,13 @@ module LCS
     def result
       @lcs = []
       x, y = @a.length-1, @b.length-1
+      matrix
       while x >= 0 and y >= 0 do
         if @a[x].eql? @b[y]
           @lcs.push @a[x]
           x, y = x - 1, y - 1
         else
-          if matrix[x - 1][y] > matrix[x][y - 1]
+          if cell_value(x - 1, y) > cell_value(x, y - 1)
             x = x - 1
           else
             y = y - 1
