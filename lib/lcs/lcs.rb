@@ -1,0 +1,1 @@
+require_relative 'algorithms/needleman_wunsch'
